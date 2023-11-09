@@ -47,5 +47,4 @@ def main():
         else:
             print('Invalid Dial')
 
-if _name_ == "_main_":
-    main()
+y1=main()
