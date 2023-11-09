@@ -1,25 +1,24 @@
 class TDList:
-    def _init_(self):
+    def __init__(self):
         self.tasks = []
 
     def add_task(self, task):
         self.tasks.append(task)
         print(f'Task "{task}" added successfully.')
 
+    def view_tasks(self):
+        if not self.tasks:
+            print('No tasks found.')
+        else:
+            print('Tasks:')
+            for i, task in enumerate(self.tasks, 1):
+                print(f'{i}. {task}')
     def remove_task(self, task):
         if task in self.tasks:
             self.tasks.remove(task)
             print(f'Task "{task}" removed successfully.')
         else:
             print(f'Task "{task}" not found.')
-
-    def view_tasks(self):
-        if not self.tasks:
-            print('No tasks.')
-        else:
-            print('Tasks are:')
-            for i, task in enumerate(self.tasks, 1):
-                print(f'{i}. {task}')
 
 def main():
     todo_list = TDList()
@@ -31,8 +30,7 @@ def main():
         print('3. View Tasks')
         print('4. Exit')
 
-        choice = input()
-
+        choice = input("")
         if choice == '1':
             task = input('Enter the task: ')
             todo_list.add_task(task)
@@ -42,9 +40,9 @@ def main():
         elif choice == '3':
             todo_list.view_tasks()
         elif choice == '4':
-            print('Goodbye!')
+            print('Exiting the program. Goodbye!')
             break
         else:
-            print('Invalid Dial')
+            print('Inavlid Dial')
 
-y1=main()
+main()
